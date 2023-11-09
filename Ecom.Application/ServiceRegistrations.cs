@@ -11,8 +11,7 @@ namespace Ecom.Application
     public static class ServiceRegistrations
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
-        {
-            
+        {            
             return services;
         }
     }
