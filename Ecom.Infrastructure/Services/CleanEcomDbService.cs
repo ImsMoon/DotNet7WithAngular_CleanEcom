@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Ecom.Application.ServiceContacts;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +16,7 @@ namespace Ecom.Infrastructure.Services
         {
             var pendingMigrations = await _dbContext.Database.GetPendingMigrationsAsync();
             await _dbContext.Database.MigrateAsync();
+            await StoreContextSeed.SendAsync(_dbContext);
             return pendingMigrations.Count();
         }
     }

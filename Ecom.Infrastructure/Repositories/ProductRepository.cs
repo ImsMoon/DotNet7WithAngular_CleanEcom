@@ -6,7 +6,7 @@ using Ecom.Application.Features.Products.RepositoryContacts;
 using Ecom.Domain;
 using Microsoft.EntityFrameworkCore;
 
-namespace Ecom.Infrastructure
+namespace Ecom.Infrastructure.Repositories
 {
     public class ProductRepository : IProductRepository
     {
