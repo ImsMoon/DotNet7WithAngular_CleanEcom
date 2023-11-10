@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ecom.API.Exceptions;
 using Ecom.Application.Features.Products.DTOs;
 using Ecom.Application.Features.Products.Queries;
 using MediatR;
@@ -27,7 +28,9 @@ namespace Ecom.API.Controllers
             return Ok(result);
         }
 
-         [HttpGet("{id}")]
+        [HttpGet("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ProductDto>> GetProduct(int id)
         {
             var result = await _mediator.Send(new GetProductQuery(id));
