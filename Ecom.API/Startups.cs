@@ -1,6 +1,7 @@
 
 using Microsoft.OpenApi.Models;
 using Ecom.Infrastructure;
+using Ecom.Application;
 
 namespace Ecom.API;
 
@@ -9,6 +10,7 @@ public static class Startup
     public static WebApplication ConfigureService(this WebApplicationBuilder builder){
         AddSwagger(builder.Services);
         builder.Services.AddInfrastructureServices(builder.Configuration);
+        builder.Services.AddApplicationServices();
 
         builder.Services.AddHttpContextAccessor();
         builder.Services.AddControllers();
