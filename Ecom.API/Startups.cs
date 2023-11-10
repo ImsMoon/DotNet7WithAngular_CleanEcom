@@ -2,6 +2,8 @@
 using Microsoft.OpenApi.Models;
 using Ecom.Infrastructure;
 using Ecom.Application;
+using Ecom.API.Exceptions;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Ecom.API;
 
@@ -20,11 +22,30 @@ public static class Startup
             .AllowAnyHeader()
             .AllowAnyMethod());
         });
+
+        builder.Services.Configure<ApiBehaviorOptions>(options=>{
+            options.InvalidModelStateResponseFactory = actionContext =>
+            {
+                var errors = actionContext.ModelState
+                .Where(e=>e.Value!.Errors.Count > 0)
+                .SelectMany(x=>x.Value!.Errors)
+                .Select(x=>x.ErrorMessage).ToArray();
+
+                var errorResponse = new ApiValidationErrorResponse
+                {
+                    Errors = errors
+                };
+
+                return new BadRequestObjectResult(errorResponse);
+            };
+        });
         return builder.Build();
     }
 
     public static WebApplication Configure(this WebApplication app)
     {
+        app.UseStatusCodePagesWithReExecute("errors/{code}");
+        app.UseMiddleware<ExceptionMiddleware>();
         if(app.Environment.IsDevelopment()){
             app.UseSwagger();
             app.UseSwaggerUI(s=>{

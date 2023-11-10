@@ -11,7 +11,7 @@ namespace Ecom.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class ProductsController : ControllerBase
+    public class ProductsController : BaseAPIController
     {
         private readonly IMediator _mediator;
 
