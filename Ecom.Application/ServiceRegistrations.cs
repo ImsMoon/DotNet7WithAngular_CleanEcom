@@ -14,8 +14,8 @@ namespace Ecom.Application
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {     
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());// retrive all assemblies 
-            services.AddMediatR(Assembly.GetExecutingAssembly()); // inject from this assembly
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddMediatR(Assembly.GetExecutingAssembly());
             return services;
         }
     }

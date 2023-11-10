@@ -17,12 +17,12 @@ namespace Ecom.Infrastructure
     {
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration cofiguration)
         {
-            // Action<DbContextOptionsBuilder>? optionsAction = options =>
-            //                 options.UseSqlite(cofiguration.GetConnectionString("DefaultConnection"));
+            Action<DbContextOptionsBuilder>? optionsAction = options =>
+                            options.UseSqlite(cofiguration.GetConnectionString("DefaultConnection"));
             services.AddScoped<ICleanEcomDbService, CleanEcomDbService>();
             services.AddScoped<IProductRepository,ProductRepository>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-            services.AddDbContext<StoreDbContext>();
+            services.AddDbContext<StoreDbContext>(optionsAction);
             return services;
         }
     }
