@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Ecom.Application.Features.Products.DTOs;
 using Ecom.Application.Features.Products.RepositoryContacts;
-using Ecom.Application.Specifications;
+using Ecom.Application.Features.Products.Specification;
 using Ecom.Domain;
 using MediatR;
 
