@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Ecom.API.Exceptions;
 using Ecom.Application.Features.Products.DTOs;
 using Ecom.Application.Features.Products.Queries;
+using Ecom.Application.Features.Products.Specification;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,9 +23,9 @@ namespace Ecom.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<List<ProductDto>>> GetProducts()
+        public async Task<ActionResult<List<ProductDto>>> GetProducts([FromQuery]ProductSpecParams product)
         {
-            var result = await _mediator.Send(new GetProductListQuery());
+            var result = await _mediator.Send(new GetProductListQuery(product));
             return Ok(result);
         }
 

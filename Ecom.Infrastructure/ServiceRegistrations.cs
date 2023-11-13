@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Ecom.Application.Features.Products.RepositoryContacts;
+using Ecom.Application.GenericRepos;
 using Ecom.Application.ServiceContacts;
 using Ecom.Infrastructure.Repositories;
 using Ecom.Infrastructure.Services;

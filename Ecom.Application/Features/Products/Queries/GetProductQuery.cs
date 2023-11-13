@@ -6,6 +6,7 @@ using AutoMapper;
 using Ecom.Application.Features.Products.DTOs;
 using Ecom.Application.Features.Products.RepositoryContacts;
 using Ecom.Application.Features.Products.Specification;
+using Ecom.Application.GenericRepos;
 using Ecom.Domain;
 using MediatR;
 

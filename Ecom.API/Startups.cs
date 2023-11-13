@@ -23,6 +23,7 @@ public static class Startup
             .AllowAnyMethod());
         });
 
+        // retunr custom error page if url is incorrect
         builder.Services.Configure<ApiBehaviorOptions>(options=>{
             options.InvalidModelStateResponseFactory = actionContext =>
             {
@@ -39,6 +40,14 @@ public static class Startup
                 return new BadRequestObjectResult(errorResponse);
             };
         });
+
+        //add cors
+        builder.Services.AddCors(opt=>
+        {
+            opt.AddPolicy("CorsPolicy",policy=>{
+                policy.AllowAnyHeader().AllowAnyMethod().WithOrigins("https://localhost:");
+            });
+        });
         return builder.Build();
     }
 
@@ -52,11 +61,11 @@ public static class Startup
                 s.SwaggerEndpoint("/swagger/v1/swagger.json", "Clean Ecom API");
             });
         }
+        app.UseCors("CorsPolicy");
         app.UseAuthentication();
         app.UseAuthentication();
         app.UseHttpsRedirection();
         app.UseRouting();
-        app.UseCors("Open");
         app.MapControllers();
         return app;
     }

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Ecom.Application.Specifications;
 using Ecom.Domain.Entities;
 
-namespace Ecom.Application.Features.Products.RepositoryContacts
+namespace Ecom.Application.GenericRepos
 {
     public interface IGenericRepository<T> where T: BaseClass
     {
@@ -13,5 +13,6 @@ namespace Ecom.Application.Features.Products.RepositoryContacts
         Task<IReadOnlyList<T>> ListAllAsync();
         Task<T> GetEntityWithSpec(ISpecification<T> spec);
         Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec);
+        Task<int> CountAsync(ISpecification<T> spec);
     }
 }

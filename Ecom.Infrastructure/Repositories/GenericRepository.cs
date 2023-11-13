@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Ecom.Application.Features.Products.RepositoryContacts;
+using Ecom.Application.GenericRepos;
 using Ecom.Application.Specifications;
 using Ecom.Domain.Entities;
 using Ecom.Infrastructure.Helper;
@@ -17,6 +18,11 @@ namespace Ecom.Infrastructure.Repositories
         public GenericRepository(StoreDbContext dbContext)
         {
             _dbContext = dbContext;
+        }
+
+        public async Task<int> CountAsync(ISpecification<T> spec)
+        {
+            return await ApplySpecification(spec).CountAsync();
         }
 
         public async Task<T> GetByIdAsync(int id)
@@ -39,6 +45,7 @@ namespace Ecom.Infrastructure.Repositories
             return await ApplySpecification(spec).ToListAsync();
         }
 
+        // prepare the query to send db
         private IQueryable<T> ApplySpecification(ISpecification<T> spec)
         {
             return SpecificationEvaluator<T>.GetQuery(_dbContext.Set<T>().AsQueryable(),spec);

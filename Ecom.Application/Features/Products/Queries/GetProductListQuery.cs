@@ -6,17 +6,24 @@ using AutoMapper;
 using Ecom.Application.Features.Products.DTOs;
 using Ecom.Application.Features.Products.RepositoryContacts;
 using Ecom.Application.Features.Products.Specification;
+using Ecom.Application.GenericRepos;
+using Ecom.Application.Helper.DTOs;
 using Ecom.Domain;
 using MediatR;
 
 namespace Ecom.Application.Features.Products.Queries
 {
-    public class GetProductListQuery:IRequest<IReadOnlyList<ProductDto>>
+    public class GetProductListQuery:IRequest<Pagination<ProductDto>>
     {
-        
+        public ProductSpecParams productSpecParams {get;set;}
+
+        public GetProductListQuery(ProductSpecParams productSpecParams)
+        {
+            this.productSpecParams = productSpecParams;
+        }
     }
 
-    public class GetProductListQueryHandler : IRequestHandler<GetProductListQuery, IReadOnlyList<ProductDto>>
+    public class GetProductListQueryHandler : IRequestHandler<GetProductListQuery, Pagination<ProductDto>>
     {
         private readonly IGenericRepository<ProductBrand> _productBrandRepo;
         private readonly IGenericRepository<ProductType> _productTypeRepo;
@@ -31,12 +38,17 @@ namespace Ecom.Application.Features.Products.Queries
             _productsRepo = productsRepo;
         }
 
-        public async Task<IReadOnlyList<ProductDto>> Handle(GetProductListQuery request, CancellationToken cancellationToken)
+        public async Task<Pagination<ProductDto>> Handle(GetProductListQuery request, CancellationToken cancellationToken)
         {
-            var spec = new ProductsWithTypesAndBrandsSpecification();
+            var spec = new ProductsWithTypesAndBrandsSpecification(request.productSpecParams);
+            var countSpec = new ProductsWithFiltersForCountSpecification(request.productSpecParams);
+
+            var totalItems = await _productsRepo.CountAsync(countSpec);
             var products = await _productsRepo.ListAsync(spec);
-            var result = _mapper.Map<IReadOnlyList<ProductDto>>(products);
-            return result;
+
+            var data = _mapper.Map<IReadOnlyList<ProductDto>>(products);
+            return new Pagination<ProductDto>(request.productSpecParams.PageIndex,
+            request.productSpecParams.PageSize, totalItems, data);
         }
     }
 }
