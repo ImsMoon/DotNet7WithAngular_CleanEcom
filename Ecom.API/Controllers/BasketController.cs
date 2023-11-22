@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Ecom.Application.Features.Basket.Command;
 using Ecom.Application.Features.Basket.DTOs;
+using Ecom.Application.Features.Basket.Queries;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,19 +24,21 @@ namespace Ecom.API.Controllers
         [HttpGet]
         public async Task<ActionResult> GetBasketById(string id)
         {
-            return Ok();
+            var result = await _mediatr.Send(new GetBasketByIdQuery(id));
+            return Ok(result);
         }
 
         [HttpPost]
         public async Task<ActionResult> UpdateBasket(CustomerBasketDto basket)
         {
-            return Ok();
+            var result = await _mediatr.Send(new UpdateBasketCommand(basket));
+            return Ok(result);
         }
 
         [HttpDelete]
-        public async Task DeleteBasketAsync(string id)
+        public async Task<IActionResult> DeleteBasketAsync(string id)
         {
-            
+            return Ok(await _mediatr.Send(new DeleteBasketCommand(id)));
         }
     }
 }
