@@ -17,20 +17,20 @@ namespace Ecom.Infrastructure
 
             if(!dbContext.ProductBrands.Any())
             {
-                var brandsData = File.ReadAllText(path+@"/Ecom.Infrastructure/SeedData/brands.json");
+                var brandsData = File.ReadAllText(path+@"/SeedData/brands.json");
                 var brands = JsonSerializer.Deserialize<List<ProductBrand>>(brandsData);
                 dbContext.ProductBrands.AddRange(brands!);
             }
             if (!dbContext.ProductTypes.Any())
             {
-                var typesData = File.ReadAllText(path + @"/Data/SeedData/types.json");
+                var typesData = File.ReadAllText(path + @"/SeedData/types.json");
                 var types = JsonSerializer.Deserialize<List<ProductType>>(typesData);
                 dbContext.ProductTypes.AddRange(types!);
             }
 
             if (!dbContext.Products.Any())
             {
-                var productsData = File.ReadAllText(path + @"/Data/SeedData/products.json");
+                var productsData = File.ReadAllText(path + @"/SeedData/products.json");
                 var products = JsonSerializer.Deserialize<List<Product>>(productsData);
                 dbContext.Products.AddRange(products!);
             }

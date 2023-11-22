@@ -6,20 +6,23 @@ using Ecom.API.Exceptions;
 using Ecom.Application.Features.Products.DTOs;
 using Ecom.Application.Features.Products.Queries;
 using Ecom.Application.Features.Products.Specification;
+using Ecom.Application.ServiceContacts;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Ecom.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/products")]
     public class ProductsController : BaseAPIController
     {
         private readonly IMediator _mediator;
+        private readonly ICleanEcomDbService _cleanEcomDbService;
 
-        public ProductsController(IMediator mediator)
+        public ProductsController(IMediator mediator, ICleanEcomDbService cleanEcomDbService)
         {
             _mediator = mediator;
+            _cleanEcomDbService = cleanEcomDbService;
         }
 
         [HttpGet]
@@ -49,5 +52,12 @@ namespace Ecom.API.Controllers
         // {
         //     return Ok(await _productTypeRepo.ListAllAsync());
         // }
+
+        [HttpGet("/applymigration")]
+        public async Task<IActionResult> ApplyMigration()
+        {
+            var result = await _cleanEcomDbService.ApplyMigrationsAsync();
+            return Ok(result);
+        }
     }
 }

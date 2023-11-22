@@ -21,7 +21,7 @@ namespace Ecom.Infrastructure
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration cofiguration)
         {
             Action<DbContextOptionsBuilder>? optionsAction = options =>
-                            options.UseSqlite(cofiguration.GetConnectionString("DefaultConnection"));
+                            options.UseSqlite("Data source=CleanEcom.db");
 
             services.AddSingleton<IConnectionMultiplexer>(c=>{
                 var configuration = ConfigurationOptions.Parse(cofiguration.GetConnectionString("Redis")!,true);
