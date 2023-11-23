@@ -15,4 +15,16 @@ namespace Ecom.Application.Features.Products.DTOs
         public string? ProductType { get; set; }
         public string? ProductBrand { get; set; }
     }
+
+    public class ProductBrandDto
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+    }
+
+    public class ProductTypeDto
+    {
+        public int Id { get; set; }
+        public string? Name { get; set; }
+    }
 }

@@ -25,16 +25,12 @@ namespace Ecom.Application.Features.Products.Queries
 
     public class GetProductListQueryHandler : IRequestHandler<GetProductListQuery, Pagination<ProductDto>>
     {
-        private readonly IGenericRepository<ProductBrand> _productBrandRepo;
-        private readonly IGenericRepository<ProductType> _productTypeRepo;
         private readonly IGenericRepository<Product> _productsRepo;
         private readonly IMapper _mapper;
 
-        public GetProductListQueryHandler(IMapper mapper, IGenericRepository<ProductBrand> productBrandRepo, IGenericRepository<ProductType> productTypeRepo, IGenericRepository<Product> productsRepo)
+        public GetProductListQueryHandler(IMapper mapper, IGenericRepository<Product> productsRepo)
         {
             _mapper = mapper;
-            _productBrandRepo = productBrandRepo;
-            _productTypeRepo = productTypeRepo;
             _productsRepo = productsRepo;
         }
 

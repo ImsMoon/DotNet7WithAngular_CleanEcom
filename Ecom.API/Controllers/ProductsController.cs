@@ -28,6 +28,10 @@ namespace Ecom.API.Controllers
         [HttpGet]
         public async Task<ActionResult<List<ProductDto>>> GetProducts([FromQuery]ProductSpecParams product)
         {
+            product = new ProductSpecParams();
+            product.BrandId = null;
+            product.TypeId = null;
+            product.Search = null;
             var result = await _mediator.Send(new GetProductListQuery(product));
             return Ok(result);
         }
@@ -41,17 +45,17 @@ namespace Ecom.API.Controllers
             return Ok(result);
         }
 
-        //  [HttpGet("brands")]
-        // public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductBrands()
-        // {
-        //     return Ok(await _productBrandRepo.ListAllAsync());
-        // }
+         [HttpGet("brands")]
+        public async Task<ActionResult<IReadOnlyList<ProductBrandDto>>> GetProductBrands()
+        {
+            return Ok(await _mediator.Send(new GetProductBrandsQuery()));
+        }
 
-        // [HttpGet("types")]
-        // public async Task<ActionResult<IReadOnlyList<ProductBrand>>> GetProductTypes()
-        // {
-        //     return Ok(await _productTypeRepo.ListAllAsync());
-        // }
+        [HttpGet("types")]
+        public async Task<ActionResult<IReadOnlyList<ProductTypeDto>>> GetProductTypes()
+        {
+            return Ok(await _mediator.Send(new GetProductTypesQuery()));
+        }
 
         [HttpGet("/applymigration")]
         public async Task<IActionResult> ApplyMigration()
