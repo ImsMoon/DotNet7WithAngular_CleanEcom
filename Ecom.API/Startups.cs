@@ -51,10 +51,9 @@ public static class Startup
         }
         app.UseCors(options => options.AllowAnyMethod().AllowAnyHeader().AllowCredentials()
             .SetIsOriginAllowed(hostName => true));
-        app.UseAuthentication();
-        app.UseAuthentication();
-        app.UseHttpsRedirection();
         app.UseRouting();
+        app.UseAuthentication();
+        app.UseAuthorization();
         app.MapControllers();
         return app;
     }

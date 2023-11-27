@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Ecom.API.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/account")]
     public class AccountController : BaseAPIController
     {
         private readonly IAuthService _authService;
@@ -28,8 +28,8 @@ namespace Ecom.API.Controllers
             return Ok(await _authService.GetCurrentUser(User));
         }
 
-        [HttpGet("login")]
-        public async Task<IActionResult> Login(LoginDto login)
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody]LoginDto login)
         {
             var result = await _authService.Login(login);
             if(result == null)
@@ -56,14 +56,15 @@ namespace Ecom.API.Controllers
             return Created("",result);
         }
 
+        [Authorize]
         [HttpGet("address")]
         public async Task<IActionResult> GetUserAddress()
-        {
+        {           
             return Ok(await _authService.GetUserAddress(User));
         }
 
         [Authorize]
-        [HttpGet("address")]
+        [HttpPut("address")]
         public async Task<IActionResult> UpdateUserAddress(AddressDto address)
         {
             var result = await _authService.UpdateUserAddress(User,address);
