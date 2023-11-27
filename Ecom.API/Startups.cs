@@ -4,6 +4,7 @@ using Ecom.Infrastructure;
 using Ecom.Application;
 using Ecom.API.Exceptions;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace Ecom.API;
 
@@ -36,6 +37,11 @@ public static class Startup
 
         //add cors
         builder.Services.AddCors();
+
+        //serilog        
+        builder.Host.UseSerilog((context, loggerConfig)=>
+            loggerConfig.WriteTo.Console().ReadFrom.Configuration(context.Configuration),true);
+
         return builder.Build();
     }
 
@@ -55,6 +61,9 @@ public static class Startup
         app.UseAuthentication();
         app.UseAuthorization();
         app.MapControllers();
+
+        //serilog
+        app.UseSerilogRequestLogging();
         return app;
     }
 

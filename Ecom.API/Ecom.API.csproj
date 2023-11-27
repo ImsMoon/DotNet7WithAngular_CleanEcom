@@ -8,7 +8,7 @@
 
  <ItemGroup>
     <ProjectReference Include="../Ecom.Infrastructure/Ecom.Infrastructure.csproj" /> 
-    <ProjectReference Include="../Ecom.Application/Ecom.Application.csproj"/>
+    <ProjectReference Include="../Ecom.Application/Ecom.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +19,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
+    <PackageReference Include="Serilog.AspNetCore" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
