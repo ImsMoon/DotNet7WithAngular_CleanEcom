@@ -1,10 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using Ecom.Domain.Entities;
 
-namespace Ecom.Application.Contracts
+namespace Ecom.Application.Features.Basket.Contracts
 {
     public interface IBasketRepository
     {

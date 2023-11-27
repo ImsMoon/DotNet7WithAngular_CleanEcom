@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+
 using AutoMapper;
-using Ecom.Application.Contracts;
+using Ecom.Application.Features.Basket.Contracts;
 using Ecom.Application.Features.Basket.DTOs;
 using MediatR;
 

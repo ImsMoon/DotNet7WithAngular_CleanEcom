@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Ecom.Application.Contracts;
+
+using Ecom.Application.Features.Basket.Contracts;
 using MediatR;
 
 namespace Ecom.Application.Features.Basket.Command
