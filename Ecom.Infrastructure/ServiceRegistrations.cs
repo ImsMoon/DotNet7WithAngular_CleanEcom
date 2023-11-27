@@ -30,7 +30,7 @@ namespace Ecom.Infrastructure
             services.AddScoped<IBasketRepository,BasketRepository>();
             services.AddScoped<ICleanEcomDbService, CleanEcomDbService>();
             services.AddScoped<IIdentityDbService,IdentityDbService>();
-            services.AddScoped<ITokenService,TokenService>();
+            services.AddSingleton<ITokenService,TokenService>();
             services.AddScoped<IAuthService,AuthService>();
             services.AddScoped<IProductRepository,ProductRepository>();
             services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
