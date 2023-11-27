@@ -75,6 +75,25 @@ public static class Startup
                 Version = "v1",
                 Title = "Clean Ecom"        
             });
+
+            var securityScheme = new OpenApiSecurityScheme
+            {
+                Description = "JWT",
+                Name= "Autherization",
+                In = ParameterLocation.Header,
+                Type = SecuritySchemeType.Http,
+                Scheme = "bearer",
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                },
+                
+            };
+            c.AddSecurityDefinition("Bearer",securityScheme);
+            var securityRequirement = new OpenApiSecurityRequirement{{securityScheme, new[]
+            {"Bearer"}}};
+            c.AddSecurityRequirement(securityRequirement);
         });
     }
 

@@ -13,6 +13,7 @@ namespace Ecom.Application.Features.Basket.Mappings
         public MappingProfile()
         {
             CreateMap<CustomerBasket, CustomerBasketDto>().ReverseMap();
+            CreateMap<BasketItem,BasketItemDto>().ReverseMap();
         }
     }
 }

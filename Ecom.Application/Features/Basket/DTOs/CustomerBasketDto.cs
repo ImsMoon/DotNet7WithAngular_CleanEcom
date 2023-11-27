@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Ecom.Application.Features.Basket.DTOs
 {
     public class CustomerBasketDto
@@ -11,7 +13,9 @@ namespace Ecom.Application.Features.Basket.DTOs
             Id = id;
         }
 
+        [Required]
         public string Id { get; set; }
+
         public List<BasketItemDto> Items { get; set; } = new List<BasketItemDto>();
     }
     
