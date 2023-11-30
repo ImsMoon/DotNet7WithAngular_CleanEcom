@@ -37,6 +37,8 @@ namespace Ecom.Infrastructure.Services
         {
             var user = await _userManager.FindByEmailFromClaimsPrincipal(User);
 
+            if(user == null) return new UserDto();
+
             return new UserDto
             {
                 Email=user.Email,

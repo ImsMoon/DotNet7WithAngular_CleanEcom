@@ -21,9 +21,9 @@ namespace Ecom.API.Controllers
             _authService = authService;
         }
 
-        [Authorize]
+        // [Authorize]
         [HttpGet]
-        public async Task<IActionResult> GetCurrentUser()
+        public async Task<IActionResult> Get()
         {
             return Ok(await _authService.GetCurrentUser(User));
         }
