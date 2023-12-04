@@ -1,0 +1,141 @@
+2023-12-01 14:30:10.602 +06:00 [INF] User profile is available. Using 'C:\Users\BS-647\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-12-01 14:30:10.780 +06:00 [INF] Now listening on: http://localhost:5103
+2023-12-01 14:30:10.781 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-12-01 14:30:10.781 +06:00 [INF] Hosting environment: Development
+2023-12-01 14:30:10.781 +06:00 [INF] Content root path: C:\Users\BS-647\Desktop\github.com\clean_dot_net_with_angular\AngularCleanEcom\Ecom.API
+2023-12-01 14:30:11.221 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/swagger - -
+2023-12-01 14:30:11.263 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/swagger - - - 301 0 - 43.6841ms
+2023-12-01 14:30:11.272 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/swagger/index.html - -
+2023-12-01 14:30:11.359 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/swagger/index.html - - - 200 - text/html;charset=utf-8 86.8313ms
+2023-12-01 14:30:11.408 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/swagger/swagger-ui.css - -
+2023-12-01 14:30:11.422 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/swagger/swagger-ui-bundle.js - -
+2023-12-01 14:30:11.425 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/swagger/swagger-ui-standalone-preset.js - -
+2023-12-01 14:30:11.461 +06:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2023-12-01 14:30:11.465 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/swagger/swagger-ui.css - - - 200 144929 text/css 56.9957ms
+2023-12-01 14:30:11.466 +06:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2023-12-01 14:30:11.467 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/swagger/swagger-ui-standalone-preset.js - - - 200 312163 text/javascript 41.8399ms
+2023-12-01 14:30:11.471 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/_framework/aspnetcore-browser-refresh.js - -
+2023-12-01 14:30:11.481 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/_framework/aspnetcore-browser-refresh.js - - - 200 13732 application/javascript;+charset=utf-8 9.8117ms
+2023-12-01 14:30:11.500 +06:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2023-12-01 14:30:11.500 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/swagger/swagger-ui-bundle.js - - - 200 1061536 text/javascript 78.7445ms
+2023-12-01 14:30:12.098 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/swagger/v1/swagger.json - -
+2023-12-01 14:30:12.121 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/swagger/favicon-32x32.png - -
+2023-12-01 14:30:12.122 +06:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2023-12-01 14:30:12.122 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/swagger/favicon-32x32.png - - - 200 628 image/png 0.7596ms
+2023-12-01 14:30:12.202 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 103.5030ms
+2023-12-01 14:30:46.017 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/applymigration - -
+2023-12-01 14:30:46.151 +06:00 [INF] Executing endpoint 'Ecom.API.Controllers.ProductsController.ApplyMigration (Ecom.API)'
+2023-12-01 14:30:46.164 +06:00 [INF] Route matched with {action = "ApplyMigration", controller = "Products"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ApplyMigration() on controller Ecom.API.Controllers.ProductsController (Ecom.API).
+2023-12-01 14:30:47.035 +06:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-12-01 14:30:47.053 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-12-01 14:30:47.063 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-12-01 14:30:47.063 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2023-12-01 14:30:47.064 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-12-01 14:30:47.069 +06:00 [INF] Applying migration '20231201073845_OrderEntityAdded'.
+2023-12-01 14:30:47.113 +06:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "DeliveryMethods" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_DeliveryMethods" PRIMARY KEY AUTOINCREMENT,
+    "ShortName" TEXT NULL,
+    "DeliveryTime" TEXT NULL,
+    "Description" TEXT NULL,
+    "Price" decimal(18,2) NOT NULL
+);
+2023-12-01 14:30:47.114 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Orders" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Orders" PRIMARY KEY,
+    "BuyerEmail" TEXT NOT NULL,
+    "OrderDate" TEXT NOT NULL,
+    "ShipToAddress_FirstName" TEXT NOT NULL,
+    "ShipToAddress_LastName" TEXT NOT NULL,
+    "ShipToAddress_Street" TEXT NOT NULL,
+    "ShipToAddress_City" TEXT NOT NULL,
+    "ShipToAddress_State" TEXT NOT NULL,
+    "ShipToAddress_ZipCode" TEXT NOT NULL,
+    "DeliveryMethodId" INTEGER NOT NULL,
+    "Subtotal" REAL NOT NULL,
+    "Status" TEXT NOT NULL,
+    "PaymentIntentId" TEXT NOT NULL,
+    CONSTRAINT "FK_Orders_DeliveryMethods_DeliveryMethodId" FOREIGN KEY ("DeliveryMethodId") REFERENCES "DeliveryMethods" ("Id") ON DELETE CASCADE
+);
+2023-12-01 14:30:47.114 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "OrderItems" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_OrderItems" PRIMARY KEY AUTOINCREMENT,
+    "ItemOrdered_ProductItemId" INTEGER NOT NULL,
+    "ItemOrdered_ProductName" TEXT NOT NULL,
+    "ItemOrdered_PictureUrl" TEXT NOT NULL,
+    "Price" decimal(18,2) NOT NULL,
+    "Quantity" INTEGER NOT NULL,
+    "OrderId" INTEGER NULL,
+    CONSTRAINT "FK_OrderItems_Orders_OrderId" FOREIGN KEY ("OrderId") REFERENCES "Orders" ("Id") ON DELETE CASCADE
+);
+2023-12-01 14:30:47.115 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_OrderItems_OrderId" ON "OrderItems" ("OrderId");
+2023-12-01 14:30:47.115 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Orders_DeliveryMethodId" ON "Orders" ("DeliveryMethodId");
+2023-12-01 14:30:47.115 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "__EFMigrationsHistory" ("MigrationId", "ProductVersion")
+VALUES ('20231201073845_OrderEntityAdded', '7.0.13');
+2023-12-01 14:30:47.266 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "ProductBrands" AS "p")
+2023-12-01 14:30:47.270 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "ProductTypes" AS "p")
+2023-12-01 14:30:47.273 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Products" AS "p")
+2023-12-01 14:30:47.274 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "DeliveryMethods" AS "d")
+2023-12-01 14:30:47.388 +06:00 [INF] Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 8), @p2='?' (Size = 21), @p3='?' (DbType = Double), @p4='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "DeliveryMethods" ("Id", "DeliveryTime", "Description", "Price", "ShortName")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-12-01 14:30:47.391 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 8), @p2='?' (Size = 20), @p3='?' (DbType = Double), @p4='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "DeliveryMethods" ("Id", "DeliveryTime", "Description", "Price", "ShortName")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-12-01 14:30:47.391 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 9), @p2='?' (Size = 16), @p3='?' (DbType = Double), @p4='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "DeliveryMethods" ("Id", "DeliveryTime", "Description", "Price", "ShortName")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-12-01 14:30:47.392 +06:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 9), @p2='?' (Size = 30), @p3='?' (DbType = Double), @p4='?' (Size = 4)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "DeliveryMethods" ("Id", "DeliveryTime", "Description", "Price", "ShortName")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-12-01 14:30:47.400 +06:00 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2023-12-01 14:30:47.405 +06:00 [INF] Executed action Ecom.API.Controllers.ProductsController.ApplyMigration (Ecom.API) in 1238.3549ms
+2023-12-01 14:30:47.405 +06:00 [INF] Executed endpoint 'Ecom.API.Controllers.ProductsController.ApplyMigration (Ecom.API)'
+2023-12-01 14:30:47.409 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/applymigration - - - 200 - application/json;+charset=utf-8 1392.7547ms
+2023-12-01 14:44:42.555 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/swagger/index.html - -
+2023-12-01 14:44:42.562 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/swagger/index.html - - - 200 - text/html;charset=utf-8 7.6789ms
+2023-12-01 14:44:42.597 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/_framework/aspnetcore-browser-refresh.js - -
+2023-12-01 14:44:42.598 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/_framework/aspnetcore-browser-refresh.js - - - 200 13732 application/javascript;+charset=utf-8 0.9795ms
+2023-12-01 14:44:43.071 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/swagger/v1/swagger.json - -
+2023-12-01 14:44:43.086 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 15.1802ms
+2023-12-01 14:44:56.672 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/swagger/index.html - -
+2023-12-01 14:44:56.678 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/swagger/index.html - - - 200 - text/html;charset=utf-8 5.8004ms
+2023-12-01 14:44:56.716 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/_framework/aspnetcore-browser-refresh.js - -
+2023-12-01 14:44:56.716 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/_framework/aspnetcore-browser-refresh.js - - - 200 13732 application/javascript;+charset=utf-8 0.5164ms
+2023-12-01 14:44:56.856 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/swagger/v1/swagger.json - -
+2023-12-01 14:44:56.863 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 7.3218ms
+2023-12-01 14:48:37.145 +06:00 [INF] User profile is available. Using 'C:\Users\BS-647\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-12-01 14:48:37.227 +06:00 [INF] Now listening on: http://localhost:5103
+2023-12-01 14:48:37.229 +06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-12-01 14:48:37.229 +06:00 [INF] Hosting environment: Development
+2023-12-01 14:48:37.229 +06:00 [INF] Content root path: C:\Users\BS-647\Desktop\github.com\clean_dot_net_with_angular\AngularCleanEcom\Ecom.API
+2023-12-01 14:48:37.272 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/swagger/index.html - -
+2023-12-01 14:48:37.353 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/swagger/index.html - - - 200 - text/html;charset=utf-8 82.3188ms
+2023-12-01 14:48:37.386 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/_framework/aspnetcore-browser-refresh.js - -
+2023-12-01 14:48:37.390 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/_framework/aspnetcore-browser-refresh.js - - - 200 13732 application/javascript;+charset=utf-8 2.4785ms
+2023-12-01 14:48:37.513 +06:00 [INF] Request starting HTTP/1.1 GET http://localhost:5103/swagger/v1/swagger.json - -
+2023-12-01 14:48:37.634 +06:00 [INF] Request finished HTTP/1.1 GET http://localhost:5103/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 120.4105ms

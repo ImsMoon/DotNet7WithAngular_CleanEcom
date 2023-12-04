@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
 using System.Reflection;
 using System.Text.Json;
-using System.Threading.Tasks;
 using Ecom.Domain;
+using Ecom.Domain.Entities.OrderAggregate;
 
 namespace Ecom.Infrastructure
 {
@@ -33,6 +29,13 @@ namespace Ecom.Infrastructure
                 var productsData = File.ReadAllText(path + @"/SeedData/products.json");
                 var products = JsonSerializer.Deserialize<List<Product>>(productsData);
                 dbContext.Products.AddRange(products!);
+            }
+
+            if (!dbContext.DeliveryMethods.Any())
+            {
+                var deliveryData = File.ReadAllText(path + @"/SeedData/delivery.json");
+                var deliverables = JsonSerializer.Deserialize<List<DeliveryMethod>>(deliveryData);
+                dbContext.DeliveryMethods.AddRange(deliverables!);
             }
 
             if(dbContext.ChangeTracker.HasChanges()) await dbContext.SaveChangesAsync();

@@ -1,12 +1,11 @@
 
 using Ecom.Application.Features.Basket.Contracts;
+using Ecom.Application.Features.Orders.Contracts;
 using Ecom.Application.Features.Products.RepositoryContacts;
 using Ecom.Application.GenericRepos;
 using Ecom.Application.ServiceContacts;
-using Ecom.Domain.Entities.Identity;
 using Ecom.Infrastructure.Repositories;
 using Ecom.Infrastructure.Services;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -28,6 +27,8 @@ namespace Ecom.Infrastructure
 
 
             services.AddScoped<IBasketRepository,BasketRepository>();
+            services.AddScoped<IOrderRepository,OrderRepository>();
+            services.AddScoped<IUnitOfWork,UnitOfWork>();
             services.AddScoped<ICleanEcomDbService, CleanEcomDbService>();
             services.AddScoped<IIdentityDbService,IdentityDbService>();
             services.AddSingleton<ITokenService,TokenService>();

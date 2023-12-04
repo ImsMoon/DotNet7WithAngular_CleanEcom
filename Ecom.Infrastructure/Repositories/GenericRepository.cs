@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Ecom.Application.Features.Products.RepositoryContacts;
 using Ecom.Application.GenericRepos;
 using Ecom.Application.Specifications;
 using Ecom.Domain.Entities;
@@ -20,9 +15,19 @@ namespace Ecom.Infrastructure.Repositories
             _dbContext = dbContext;
         }
 
+        public void Add(T entity)
+        {
+            _dbContext.Set<T>().Add(entity);
+        }
+
         public async Task<int> CountAsync(ISpecification<T> spec)
         {
             return await ApplySpecification(spec).CountAsync();
+        }
+
+        public void Delete(T entity)
+        {
+            _dbContext.Set<T>().Remove(entity);
         }
 
         public async Task<T> GetByIdAsync(int id)
@@ -43,6 +48,12 @@ namespace Ecom.Infrastructure.Repositories
         public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
         {
             return await ApplySpecification(spec).ToListAsync();
+        }
+
+        public void Update(T entity)
+        {
+            _dbContext.Set<T>().Attach(entity);
+            _dbContext.Entry(entity).State = EntityState.Modified;
         }
 
         // prepare the query to send db
