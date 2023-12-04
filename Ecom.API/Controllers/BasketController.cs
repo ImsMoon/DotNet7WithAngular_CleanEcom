@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Ecom.Application.Features.Basket.Command;
+using Ecom.Application.Features.Basket.Commands;
 using Ecom.Application.Features.Basket.DTOs;
 using Ecom.Application.Features.Basket.Queries;
 using MediatR;

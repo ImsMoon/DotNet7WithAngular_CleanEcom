@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Ecom.Application.Features.Basket.Contracts;
 using Ecom.Application.Features.Orders.Contracts;
 using Ecom.Application.Features.Orders.Specifications;

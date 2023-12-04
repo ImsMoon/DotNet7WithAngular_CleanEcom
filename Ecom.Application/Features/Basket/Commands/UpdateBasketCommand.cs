@@ -5,7 +5,7 @@ using Ecom.Application.Features.Basket.DTOs;
 using Ecom.Domain.Entities;
 using MediatR;
 
-namespace Ecom.Application.Features.Basket.Command
+namespace Ecom.Application.Features.Basket.Commands
 {
     public class UpdateBasketCommand:IRequest<CustomerBasketDto>
     {

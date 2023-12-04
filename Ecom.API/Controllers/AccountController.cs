@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Ecom.API.Exceptions;
 using Ecom.Application.Helper.DTOs;
 using Ecom.Application.ServiceContacts;

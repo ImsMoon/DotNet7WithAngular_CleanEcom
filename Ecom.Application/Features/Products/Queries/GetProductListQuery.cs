@@ -1,10 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using Ecom.Application.Features.Products.DTOs;
-using Ecom.Application.Features.Products.RepositoryContacts;
 using Ecom.Application.Features.Products.Specification;
 using Ecom.Application.GenericRepos;
 using Ecom.Application.Helper.DTOs;

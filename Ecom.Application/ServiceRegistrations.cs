@@ -1,10 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
-using Ecom.Application.Features.Products.RepositoryContacts;
-using Ecom.Application.Specifications;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 

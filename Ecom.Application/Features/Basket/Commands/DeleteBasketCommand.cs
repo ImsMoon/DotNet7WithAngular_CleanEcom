@@ -2,7 +2,7 @@
 using Ecom.Application.Features.Basket.Contracts;
 using MediatR;
 
-namespace Ecom.Application.Features.Basket.Command
+namespace Ecom.Application.Features.Basket.Commands
 {
     public class DeleteBasketCommand:IRequest<bool>
     {
